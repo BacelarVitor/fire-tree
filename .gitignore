@@ -7,3 +7,4 @@ node_modules
 package-lock.json
 .svelte-kit
 service-account.json
+.env
