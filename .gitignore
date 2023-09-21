@@ -1,3 +1,4 @@
+.svelte-kit/
 .idea
 .DS_Store
 .vscode/*
@@ -5,7 +6,5 @@
 node_modules
 .eslintcache
 package-lock.json
-.svelte-kit
 service-account.json
 .env
-.svelte-kit
