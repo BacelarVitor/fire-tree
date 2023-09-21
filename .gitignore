@@ -8,4 +8,4 @@ package-lock.json
 .svelte-kit
 service-account.json
 .env
-.svelte-kit/*
+.svelte-kit
