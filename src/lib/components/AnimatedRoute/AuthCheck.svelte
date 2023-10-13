@@ -15,6 +15,6 @@
 {:else}
     <p class="text-error my-10">
         You must be signed in to view this page.
-        <a href="/logn" class="btn btn-primary">Sign in</a>
+        <a href="/login" class="btn btn-primary">Sign in</a>
     </p>
 {/if}
