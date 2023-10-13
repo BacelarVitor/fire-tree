@@ -1,8 +1,9 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore'
-import { getAuth } from 'firebase/auth'
+import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import { getStorage} from 'firebase/storage'
+import { writable } from "svelte/store";
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBXVUQHfF16WIIwet4Gzzqeqchm7-DNL3c",
@@ -18,3 +19,17 @@ export const app = initializeApp(firebaseConfig);
 export const db = getFirestore();
 export const auth = getAuth();
 export const storage = getStorage();
+
+function userStore() {
+  const { subscribe } = writable(auth?.currentUser ?? null, (set) => {
+    onAuthStateChanged(auth, (user) =>{
+      set(user)
+    });
+  });
+
+  return {
+    subscribe
+  }
+}
+
+export const user = userStore();
